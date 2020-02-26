@@ -4,10 +4,9 @@ var fmt = require('util').format;
 var https = require('https');
 var qs = require('querystring');
 
-var email = process.env.CF_EMAIL;
 var token = process.env.CF_TOKEN;
-if (!email || !token) {
-  console.error('CF_EMAIL and CF_TOKEN must be set');
+if (!token) {
+  console.error('CF_TOKEN must be set');
   return process.exit(1);
 }
 
@@ -96,8 +95,7 @@ function cfReq(path, params, callback) {
     port: 443,
     path: '/client/v4' + path + '?' + qs.stringify(params),
     headers: {
-      'X-Auth-Email': email,
-      'X-Auth-Key': token,
+      'Authorization': `Bearer ${token}`,
     },
     method: 'GET',
   };

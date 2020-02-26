@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/rmg/cloudflare-backup/issues"
   },
-  "homepage": "https://github.com/rmg/cloudflare-backup"
+  "homepage": "https://github.com/rmg/cloudflare-backup",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
 }

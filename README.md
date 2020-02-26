@@ -2,19 +2,20 @@
 
 Simple tool for backing up your CloudFlare hosted DNS records
 
+## Configuration
+
+In Cloudflare, create an API token with Zone.Zone, Zone.DNS on All Zones (read-only)
+
+Add this token value to a `.env` file with a key of `CF_TOKEN`.
+
+An API token is preferred to a key so you can limit the access to read-only on a subset of the account.
+
 ## Installation
 
-    npm install -g cloudflare-backup
+Run `npm install`
 
 ## Usage
 
-Set `CF_EMAIL` and `CF_TOKEN` environment variables to your CloudFlare account
-email address and API key, respectively, and run `cf-backup`. All of the DNS
-records for all of your zones will be dumped to stdout in a BIND compatible
-format.
+`node -r dotenv/config bin/cf-backup.js > cloudflare-zones.bind.txt`
 
-    CF_EMAIL=admin@domain CF_TOKEN=xxx cf-backup > zones.bind.txt
-
-
----
-Copyright &copy; 2015 Ryan Graham
+All of the DNS records for all of your zones will be dumped to stdout in a BIND compatible format.
