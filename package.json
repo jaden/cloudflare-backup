@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Simple tool for backing up your CloudFlare hosted DNS records",
   "main": "bin/cf-backup.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node -r dotenv/config bin/cf-backup.js > cloudflare-zones.bind.txt"
+  },
   "bin": {
     "cf-backup": "bin/cf-backup.js"
   },

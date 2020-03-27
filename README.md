@@ -16,6 +16,6 @@ Run `npm install`
 
 ## Usage
 
-`node -r dotenv/config bin/cf-backup.js > cloudflare-zones.bind.txt`
+`npm start`
 
-All of the DNS records for all of your zones will be dumped to stdout in a BIND compatible format.
+All of the DNS records for all of your zones will be dumped in a BIND compatible format.
